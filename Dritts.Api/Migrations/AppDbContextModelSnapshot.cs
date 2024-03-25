@@ -50,6 +50,9 @@ namespace Dritts.Api.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique();
+
                     b.HasIndex("FirstName", "MiddleName", "LastName")
                         .IsUnique();
 

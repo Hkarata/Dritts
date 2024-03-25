@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dritts.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240324181753_InitialMigration")]
+    [Migration("20240325071145_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -52,6 +52,9 @@ namespace Dritts.Api.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique();
 
                     b.HasIndex("FirstName", "MiddleName", "LastName")
                         .IsUnique();

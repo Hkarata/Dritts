@@ -20,6 +20,11 @@ namespace Dritts.Api.Data
                 .HasIndex(u => new { u.FirstName, u.MiddleName, u.LastName })
                 .IsUnique();
 
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.PhoneNumber)
+                .IsUnique();
+
+
         }
     }
 }
